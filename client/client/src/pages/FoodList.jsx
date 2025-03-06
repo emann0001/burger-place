@@ -89,7 +89,7 @@ const BurgerGrid = () => {
                             </div>
 
                             <div className="flex justify-between ">
-                                <p className="text-[#B67B0F] font-bold text-[25px] pt-[15px]"><span className="font-bold text-[15px]">N</span>{burger.price}</p>
+                                <p className="text-[#B67B0F] font-bold text-[25px] pt-[15px]"><span className="font-bold text-[15px]">₦</span>{burger.price}</p>
                                 <p className="text-gray-400 pt-[20px]">{burger.duration}</p>
                             </div>
                             <button className="py-[15px] px-[56px] rounded-[31px] btn-active bg-[#B67B0F] w-full gap-7 text-white">Add To Cart</button>

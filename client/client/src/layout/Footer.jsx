@@ -38,7 +38,7 @@ const Navbar = () => {
 
       {/* Line Image */}
       <div className='container mx-auto max-w-[1070px] pt-6 flex justify-center'>
-        <img src={lineImg} alt="Line" className="w-full max-w-[300px] md:max-w-[500px]" />
+        <img src={lineImg} alt="Line" className="w-full max-w-[300px] md:max-w-[1500px]" />
       </div>
 
       {/* Footer Text */}

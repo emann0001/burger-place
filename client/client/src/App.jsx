@@ -1,26 +1,22 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Suspense } from 'react';
-import { Home } from './routes/routes';
 import Navbar from "./layout/Navbar";
-import Footer from "./layout/Footer"
-import  LoadingRing from './utils/Loader';
+import Footer from "./layout/Footer";
+import LoadingRing from './utils/Loader';
+import { Home } from './routes/routes'; // ✅ Ensure this path is correct
 
 const App = () => {
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Suspense fallback={<div className='flex justify-center items-center h-screen'> <LoadingRing /> </div>}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} /> 
+        </Routes>
+        <Footer />
+      </Suspense>
+    </BrowserRouter>
+  );
+};
 
-        <Suspense fallback={<div className='flex justify-center item-center h-screen'> <LoadingRing/> </div>}>
-          <Navbar />
-          <Routes>
-            <Route path='/' element={<Home />} />
-          </Routes>
-          <Footer/>
-        </Suspense>
-      </BrowserRouter>
-    </>
-  )
-}
-
-export default App
+export default App;
