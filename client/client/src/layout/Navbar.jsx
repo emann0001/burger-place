@@ -130,7 +130,7 @@ const Navbar = () => {
                 <input
                   type="password"
                   placeholder="Confirm Password"
-                  className="bg-[#201F1E] w-full md:h-[35px] mb-[15px] text-white rounded-[6px] p-[16px] gap-[7px] hidden md:block"
+                  className="bg-[#201F1E] w-full md:h-[35px] mb-[15px] text-white rounded-[6px] p-[16px] gap-[7px]"
                   required
 
                 />
