@@ -1,46 +1,49 @@
-import React from 'react';
+import { useEffect } from "react";
+import React, { useState } from 'react';
+import data from './data.json'
 
-const combosData = [
-    {
-        _id: 1,
-        image: "https://res.cloudinary.com/dqqectes0/image/upload/v1741294091/comboImg-1_ah3ucr.svg",
-        title: "Combo burger",
-        rating: "6.0",
-        price: "15000",
-        duration: "15-20mins",
-    },
-    {
-        _id: 2,
-        image: "https://res.cloudinary.com/dqqectes0/image/upload/v1741294091/comboImg-2_flvpvd.svg",
-        title: "Combo burger",
-        rating: "6.0",
-        price: "15000",
-        duration: "15-20mins",
-    },
-    {
-        _id: 3,
-        image: "https://res.cloudinary.com/dqqectes0/image/upload/v1741294091/comboImg-3_f6x5si.svg",
-        title: "Combo burger",
-        rating: "6.0",
-        price: "15000",
-        duration: "15-20mins",
-    },
-    {
-        _id: 4,
-        image: "https://res.cloudinary.com/dqqectes0/image/upload/v1741294091/comboIg-4_izr7mu.svg",
-        title: "Combo burgerr",
-        rating: "5.0",
-        price: "15000",
-        duration: "15-20mins",
-    },
-];
+// const combosData = [
+//     {
+//         _id: 1,
+//         image: "https://res.cloudinary.com/dqqectes0/image/upload/v1741294091/comboImg-1_ah3ucr.svg",
+//         title: "Combo burger",
+//         rating: "6.0",
+//         price: "15000",
+//         duration: "15-20mins",
+//     },
+//     {
+//         _id: 2,
+//         image: "https://res.cloudinary.com/dqqectes0/image/upload/v1741294091/comboImg-2_flvpvd.svg",
+//         title: "Combo burger",
+//         rating: "6.0",
+//         price: "15000",
+//         duration: "15-20mins",
+//     },
+//     {
+//         _id: 3,
+//         image: "https://res.cloudinary.com/dqqectes0/image/upload/v1741294091/comboImg-3_f6x5si.svg",
+//         title: "Combo burger",
+//         rating: "6.0",
+//         price: "15000",
+//         duration: "15-20mins",
+//     },
+//     {
+//         _id: 4,
+//         image: "https://res.cloudinary.com/dqqectes0/image/upload/v1741294091/comboIg-4_izr7mu.svg",
+//         title: "Combo burgerr",
+//         rating: "5.0",
+//         price: "15000",
+//         duration: "15-20mins",
+//     },
+// ];
+
 
 const Combos = () => {
     return (
         <div className='bg-[#2F2F2F] p-4'>
             <div className='container mx-auto max-w-[1100px] rounded-[8px] p-4'>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
-                    {combosData.map((combo) => (
+                    {data.map((combo) => (
                         <div key={combo._id} className="rounded-lg p-4 shadow-lg bg-[#252422]">
                             <a href={`https://your-api.com/combos/${combo._id}`} target="_blank" rel="noopener noreferrer">
                                 <img 

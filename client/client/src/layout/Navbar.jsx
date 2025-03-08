@@ -3,11 +3,12 @@ import navImg from '../assets/navEggs.svg';
 import Locationimg from '../assets/loaction-icon.svg';
 import LocationDropDown from '../assets/dropdown-icon.svg';
 import cartLogo from '../assets/cart-icon.svg';
-import loginLogo from '../assets/login-icon.svg'; // Login icon
+import loginLogo from '../assets/login-icon.svg';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(false); // State to track Sign In / Sign Up
 
   return (
     <>
@@ -48,61 +49,131 @@ const Navbar = () => {
               <li className="flex items-center h-[56px] py-[15px] px-[20px] bg-[#B67B0F] rounded-[32px]">
                 <img src={cartLogo} alt="cart-img" />
                 <Link className="px-2 text-[#FBFBFB] font[500] text-[20px]">
-                  <span className="hidden lg:inline-block">Cart</span> 30
+                  <span className="hidden lg:inline-block cursor-pointer">Cart</span> 30
                 </Link>
               </li>
 
-              {/* Login Button (Icon on Mobile, Text on Desktop) */}
+              {/* Login Button */}
               <button
                 className="flex items-center bg-[#F0F0F0] text-[#100101] font-[500] text-[20px] rounded-[32px] px-4 py-2"
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => {
+                  setIsModalOpen(true);
+                  setIsSignUp(false); // Reset to Sign In when opening
+                }}
               >
                 <img src={loginLogo} alt="login-icon" className="w-6 h-6 md:mr-2" />
-                <span className="hidden md:inline">Login</span>
+                <span className="hidden md:inline cursor-pointer">Login</span>
               </button>
             </ul>
           </div>
         </nav>
       </header>
 
-      {/* Login Modal */}
+      {/* Authentication Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0  bg-opacity-50 flex justify-center items-center">
-          <div className="bg-[#100101] p-6  w-[350px] md:w-[600px] m:h-[692.83px] rounded-[33px] md:px-[50px] md:py-[37px] ">
-            <div className='flex item-center justify-center h-[65px]'>
-              <img src={navImg} alt="" />
+        <div className="fixed inset-0 bg-opacity-50 flex justify-center items-center overflow-x-hidden mt-[100px]">
+          <div className="bg-[#100101] p-6 w-[350px] md:w-[600px] rounded-[33px] md:px-[50px] md:py-[37px]">
+            <div className='flex justify-center h-[65px]'>
+              <img src={navImg} alt="logo" />
             </div>
-            <div className="flex justify-between items-center">
 
-              <h3 className="text-white text-lg">Welcome Back</h3>
+            <div className="flex justify-between items-center">
+              <h3 className="text-white text-[32px] pt-[30px]">
+                {isSignUp ? "Create Account" : "Welcome Back"}
+              </h3>
               <button
-                className="text-red-500 font-bold text-xl"
+                className="text-red-500 font-bold text-xl cursor-pointer"
                 onClick={() => setIsModalOpen(false)}
               >
                 ✕
               </button>
             </div>
-            <p className="text-white">Sign In To Your Acoount</p>
-            <form className="mt-4 ">
+
+            <p className="text-white text-[15px]">
+              {isSignUp ? "Let's get you started so you can start joining and creating events" : "Sign in to your account"}
+            </p>
+
+            {/* Form Section */}
+            <form className="mt-4 text-[16px] text-white">
               <input
                 type="email"
                 placeholder="Email"
-                className=" bg-[#201F1E] w-full md:h-[35px] mb-[15px] text-white rounded-[6px] p-[16px] gap-[7px]"
-                
+                className="bg-[#201F1E] w-full md:h-[35px] mb-[15px] text-white rounded-[6px] p-[15px] md:p-[17px] gap-[7px]"
+                required
+
               />
+              {isSignUp && (
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  className="bg-[#201F1E] w-full md:h-[35px] mb-[15px] text-white rounded-[6px] p-[16px] gap-[7px]"
+                  required
+
+                />
+
+              )}
               <input
                 type="password"
                 placeholder="Password"
                 className="bg-[#201F1E] w-full md:h-[35px] mb-[15px] text-white rounded-[6px] p-[16px] gap-[7px]"
+                required
+
               />
-              <Link to=''><small className='text-[13px] text-white font-[300px] underline '>Forgot Password ?</small></Link>
+
+              {!isSignUp && (
+                <Link to=''>
+                  <small className='text-[13px] text-white font-[300px] underline'>Forgot Password?</small>
+                </Link>
+              )}
+
+              {isSignUp && (
+                <input
+                  type="password"
+                  placeholder="Confirm Password"
+                  className="bg-[#201F1E] w-full md:h-[35px] mb-[15px] text-white rounded-[6px] p-[16px] gap-[7px] hidden md:block"
+                  required
+
+                />
+              )}
+              {isSignUp && (
+                <div className="flex items-center gap-2 mt-2">
+                  <input type="checkbox" id="checkbox" className="w-4 h-4" required/>
+                  <label htmlFor="checkbox" className="text-white text-[13px]">
+                    I agree to the <span className="underline cursor-pointer">terms</span> & <span className='underline cursor-pointer'>conditions</span>
+                  </label>
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-[#B67B0F] text-white py-[8px] px[56px] rounded-[31px] mt-[20px]"
+                className="w-full bg-[#B67B0F] text-white py-[8px] px[56px] rounded-[31px] mt-[20px] cursor-pointer"
+                required
               >
-                Sign in
+                {isSignUp ? "Sign Up" : "Sign In"}
               </button>
-              <p className='text-white text-[13px] pt-[10px]'>Dont have an account? <span className='text-[#B67B0F] cursor-pointer'>Sign up</span></p>
+              <p className='text-white text-[15px] md:text-[18px] pt-[10px]'>
+                {isSignUp ? (
+                  <>
+                    Already have an account?{" "}
+                    <span
+                      className='text-[#B67B0F] cursor-pointer'
+                      onClick={() => setIsSignUp(false)}
+                    >
+                      Sign In
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    Don't have an account?{" "}
+                    <span
+                      className='text-[#B67B0F] cursor-pointer'
+                      onClick={() => setIsSignUp(true)}
+                    >
+                      Sign Up
+                    </span>
+                  </>
+                )}
+              </p>
             </form>
           </div>
         </div>
