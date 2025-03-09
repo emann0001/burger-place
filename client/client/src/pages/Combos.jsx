@@ -2,41 +2,6 @@ import { useEffect } from "react";
 import React, { useState } from 'react';
 import data from './data.json'
 
-// const combosData = [
-//     {
-//         _id: 1,
-//         image: "https://res.cloudinary.com/dqqectes0/image/upload/v1741294091/comboImg-1_ah3ucr.svg",
-//         title: "Combo burger",
-//         rating: "6.0",
-//         price: "15000",
-//         duration: "15-20mins",
-//     },
-//     {
-//         _id: 2,
-//         image: "https://res.cloudinary.com/dqqectes0/image/upload/v1741294091/comboImg-2_flvpvd.svg",
-//         title: "Combo burger",
-//         rating: "6.0",
-//         price: "15000",
-//         duration: "15-20mins",
-//     },
-//     {
-//         _id: 3,
-//         image: "https://res.cloudinary.com/dqqectes0/image/upload/v1741294091/comboImg-3_f6x5si.svg",
-//         title: "Combo burger",
-//         rating: "6.0",
-//         price: "15000",
-//         duration: "15-20mins",
-//     },
-//     {
-//         _id: 4,
-//         image: "https://res.cloudinary.com/dqqectes0/image/upload/v1741294091/comboIg-4_izr7mu.svg",
-//         title: "Combo burgerr",
-//         rating: "5.0",
-//         price: "15000",
-//         duration: "15-20mins",
-//     },
-// ];
-
 
 const Combos = () => {
     return (

@@ -1,0 +1,35 @@
+[
+
+    {
+        "_id": 2,
+        "image": "https://res.cloudinary.com/dqqectes0/image/upload/v1741449584/chickenImg_zkbhe9.svg",
+        "title": "Chicken",
+        "rating": "6.0",
+        "price": "15000",
+        "duration": "20-30mins"
+    },
+    {
+        "_id": 3,
+        "image": "https://res.cloudinary.com/dqqectes0/image/upload/v1741449585/chickenImg_1_zqlw5g.svg",
+        "title": "Chicken",
+        "rating": "6.0",
+        "price": "15000",
+        "duration": "20-30mins"
+    },
+    {
+        "_id": 4,
+        "image": "https://res.cloudinary.com/dqqectes0/image/upload/v1741449584/chickrnImg_2_ijt3oy.svg",
+        "title": "Chicken",
+        "rating": "6.0",
+        "price": "15000",
+        "duration": "20-30mins"
+    },
+    {
+        "_id": 5,
+        "image": "https://res.cloudinary.com/dqqectes0/image/upload/v1741449584/chickenImg_3_oosanx.svg",
+        "title": "Chicken",
+        "rating": "5.0",
+        "price": "15000",
+        "duration": "20-30mins"
+    }
+]

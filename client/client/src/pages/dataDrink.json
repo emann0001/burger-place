@@ -1,0 +1,34 @@
+[
+    {
+        "_id": 2,
+        "image": "https://res.cloudinary.com/dqqectes0/image/upload/v1741447822/drinkImg1_byt88g.svg",
+        "title": "Drinks",
+        "rating": "6.0",
+        "price": "8000",
+        "duration": "5-10mins"
+    },
+    {
+        "_id": 3,
+        "image": "https://res.cloudinary.com/dqqectes0/image/upload/v1741447822/drinkImg2_yhdrzp.svg",
+        "title": "Drinks",
+        "rating": "6.0",
+        "price": "8000",
+        "duration": "5-10mins"
+    },
+    {
+        "_id": 4,
+        "image": "https://res.cloudinary.com/dqqectes0/image/upload/v1741447822/drinkImg3_js113b.svg",
+        "title": "Drinks",
+        "rating": "6.0",
+        "price": "8000",
+        "duration": "5-10mins"
+    },
+    {
+        "_id": 5,
+        "image": "https://res.cloudinary.com/dqqectes0/image/upload/v1741447823/drinkImg4_jbnj5e.svg",
+        "title": "Drinks",
+        "rating": "5.0",
+        "price": "8000",
+        "duration": "5-10mins"
+    }
+]
