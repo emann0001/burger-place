@@ -6,6 +6,7 @@ import Combos from './Combos'
 import Drinks from './Drinks'
 import Chickens from './Chickens'
 import Chips from './Chips'
+import BurgerDescription from '../descriptionPages/BurgerDescription'
 
 
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
       <main>
        <Hero/>
        <FoodType/>
-       
+ 
        
       </main>
     </>
