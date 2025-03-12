@@ -26,6 +26,33 @@ const burgerData = [
         price: "10000",
         duration: "15-20mins",
     },
+    {
+        _id: 4,
+        image: "https://res.cloudinary.com/dwkpeu5ra/image/upload/v1741087334/burger-img-3_fpxpnu.svg",
+        title: "Cheese burger",
+        rating: "5.0",
+        price: "10000",
+        duration: "15-20mins",
+    },
+    {
+        _id: 5,
+        image: "https://res.cloudinary.com/dwkpeu5ra/image/upload/v1741087334/burger-img-3_fpxpnu.svg",
+        title: "Cheese burger",
+        rating: "5.0",
+        price: "10000",
+        duration: "15-20mins",
+    },
+    {
+        _id: 6,
+        image: "https://res.cloudinary.com/dwkpeu5ra/image/upload/v1741087334/burger-img-3_fpxpnu.svg",
+        title: "Cheese burger",
+        rating: "5.0",
+        price: "10000",
+        duration: "15-20mins",
+    },
+
+
+
 ];
 
 const FoodList = () => {
@@ -36,7 +63,7 @@ const FoodList = () => {
     };
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-8 mb-[70px] mt-[70px]">
             {burgerData.map((burger) => (
                 <div key={burger._id} className="p-4 bg-[#252422] rounded-lg shadow-lg">
                     <img
