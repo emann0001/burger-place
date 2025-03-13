@@ -1,11 +1,11 @@
 import React from 'react';
 import data from './dataChicken.json';
 
-const Chickens = () => {
+const Chickens = ({handleAddToCart}) => {
     return (
         <div className='bg-[#2F2F2F] p-4'>
             <div className='container mx-auto max-w-[1100px] rounded-[8px] p-4'>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {data.map((chicken) => (
                         <div key={chicken._id} className="rounded-lg p-4 shadow-lg bg-[#252422]">
                             <a href={`https://your-api.com/chickens/${chicken._id}`} target="_blank" rel="noopener noreferrer">
@@ -27,7 +27,7 @@ const Chickens = () => {
                                 </p>
                                 <p className="text-gray-400">{chicken.duration}</p>
                             </div>
-                            <button className="py-[12px] px-[40px] rounded-[31px] bg-[#B67B0F] w-full text-white mt-4 hover:bg-[#A56F0D] transition">
+                            <button className="py-[12px] px-[40px] rounded-[31px] bg-[#B67B0F] w-full text-white mt-4 hover:bg-[#A56F0D] transition cursor-pointer"onClick={()=>handleAddToCart(chicken)}>
                                 Add To Cart
                             </button>
                         </div>

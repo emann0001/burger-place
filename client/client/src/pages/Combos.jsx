@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import React, { useState } from 'react';
 import data from './data.json'
+import { useNavigate } from "react-router-dom";
 
+const Combos = ({handleAddToCart}) => {
 
-const Combos = () => {
+    
     return (
         <div className='bg-[#2F2F2F] p-4'>
             <div className='container mx-auto max-w-[1100px] rounded-[8px] p-4'>
@@ -27,7 +29,7 @@ const Combos = () => {
                                 </p>
                                 <p className="text-gray-400 pt-[20px]">{combo.duration}</p>
                             </div>
-                            <button className="py-[15px] px-[56px] rounded-[31px] btn-active bg-[#B67B0F] w-full gap-7 text-white cursor-pointer">Add To Cart</button>
+                            <button className="py-[15px] px-[56px] rounded-[31px] btn-active bg-[#B67B0F] w-full gap-7 text-white cursor-pointer"onClick={()=>handleAddToCart(combo)}>Add To Cart</button>
                         </div>
                     ))}
                 </div>

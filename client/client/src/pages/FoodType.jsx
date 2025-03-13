@@ -5,7 +5,8 @@ import Drinks from './Drinks'; // Shows when clicking "Drinks"
 import Chickens from './Chickens'; // Shows when clicking "Chicken"
 import Chips from './Chips'; // Shows when clicking "Chips"
 
-const FoodType = () => {
+
+const FoodType = ({handleAddToCart}) => {
     const [selectedCategory, setSelectedCategory] = useState("Burger"); // Default is "Burger" (shows FoodList)
 
     const handleCategoryClick = (label) => {
@@ -45,11 +46,11 @@ const FoodType = () => {
 
             {/* Display the selected component */}
             <div className="container mx-auto py-[10px] px-[30px] bg-[#2F2F2F]">
-                {selectedCategory === "Combos" && <Combos />}
-                {selectedCategory === "Drink" && <Drinks />}
-                {selectedCategory === "Chicken" && <Chickens />}
+                {selectedCategory === "Combos" && <Combos handleAddToCart={handleAddToCart}/>}
+                {selectedCategory === "Drink" && <Drinks handleAddToCart={handleAddToCart}/>}
+                {selectedCategory === "Chicken" && <Chickens handleAddToCart={handleAddToCart}/>}
                 {selectedCategory === "Chips" && <Chips />}
-                {selectedCategory !== "Combos" && selectedCategory !== "Drink" && selectedCategory !== "Chicken" && selectedCategory !== "Chips" && <FoodList />} {/* Default to FoodList */}
+                {selectedCategory !== "Combos" && selectedCategory !== "Drink" && selectedCategory !== "Chicken" && selectedCategory !== "Chips" && <FoodList handleAddToCart={handleAddToCart}/>} 
             </div>
         </main>
     );
