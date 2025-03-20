@@ -1,12 +1,17 @@
 import express from "express";
 import { connect } from "./config/db.js"
 import dotenv from "dotenv";
+import productRouter from "./routes/productRoute.js"
 
 const app = express();
 
 const port = process.env.PORT || 4040;
 dotenv.config()
 
+
+app.use(express.json())
+// api routes
+app.use("/api/product", productRouter)
 
 
 app.get("/", (req, res) => {
